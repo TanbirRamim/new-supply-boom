@@ -29,20 +29,20 @@ const Navbar = ({ children }) => {
             </label>
           </div>
           <div class="flex-none hidden lg:block">
-            <ul class="menu menu-horizontal">
-              <li>
+            <ul class="menu menu-horizontal gap-x-2">
+              <li className="rounded-lg">
                 <NavLink to="/">Home</NavLink>
               </li>
-              <li>
+              <li className="rounded-lg">
                 <NavLink to="/dashboard">Dashboard</NavLink>
               </li>
-              <li>
+              <li className="rounded-lg">
                 <NavLink to="/blogs">Blogs</NavLink>
               </li>
-              <li>
+              <li className="rounded-lg">
                 <NavLink to="/myPortfolio">My Portfolio</NavLink>
               </li>
-              <li>
+              <li className="rounded-lg">
                 <NavLink to="/login">Login</NavLink>
               </li>
             </ul>
