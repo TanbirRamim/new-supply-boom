@@ -1,12 +1,16 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ children }) => {
   return (
     <div class="drawer drawer-end">
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col">
-        <div class="w-full navbar bg-primary ">
-          <div class="flex-1 px-2 mx-2 text-2xl  ">Supply Boom</div>
+        <div class="w-full navbar bg-primary fixed top-0 z-50 lg:px-15">
+          <div as={Link} to="/" class="flex-1 px-2 mx-2 text-2xl  ">
+            Supply Boom
+          </div>
+
           <div class="flex-none lg:hidden">
             <label for="my-drawer-3" class="btn btn-square btn-ghost">
               <svg
@@ -24,28 +28,45 @@ const Navbar = () => {
               </svg>
             </label>
           </div>
-
           <div class="flex-none hidden lg:block">
             <ul class="menu menu-horizontal">
               <li>
-                <a>Navbar Item 1</a>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <a>Navbar Item 2</a>
+                <NavLink to="/dashboard">Dashboard</NavLink>
+              </li>
+              <li>
+                <NavLink to="/blogs">Blogs</NavLink>
+              </li>
+              <li>
+                <NavLink to="/myPortfolio">My Portfolio</NavLink>
+              </li>
+              <li>
+                <NavLink to="/login">Login</NavLink>
               </li>
             </ul>
           </div>
         </div>
-        Content
+        {children}
       </div>
       <div class="drawer-side">
         <label for="my-drawer-3" class="drawer-overlay"></label>
         <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
           <li>
-            <a>Sidebar Item 1</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a>Sidebar Item 2</a>
+            <NavLink to="/dashboard">Dashboard</NavLink>
+          </li>
+          <li>
+            <NavLink to="/blogs">Blogs</NavLink>
+          </li>
+          <li>
+            <NavLink to="/myPortfolio">My Portfolio</NavLink>
+          </li>
+          <li>
+            <NavLink to="login">Login</NavLink>
           </li>
         </ul>
       </div>
