@@ -5,6 +5,7 @@ import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import MyPortfolio from "./Pages/MyPortfolio";
+import NotFound from "./Pages/NotFound";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/myPortfolio" element={<MyPortfolio />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Navbar>
     </div>
