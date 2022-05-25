@@ -2,7 +2,7 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div className="mt-16 ">
+    <div className="mt-16 h-screen mx-5">
       <div
         tabindex="0"
         class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
@@ -33,7 +33,19 @@ const Blogs = () => {
           What are the different ways to manage a state in a React application?
         </div>
         <div class="collapse-content">
-          <p>tabindex="0" attribute is necessary to make the div focusable</p>
+          <p>
+            The Four Kinds of React State to Manage When we talk about state in
+            our applications, it’s important to be clear about what types of
+            state actually matter. There are four main types of state you need
+            to properly manage in your React apps: <br />
+            1. Local state
+            <br />
+            2. Global state
+            <br />
+            3. Server state
+            <br />
+            4. URL state
+          </p>
         </div>
       </div>
       <div
@@ -41,10 +53,16 @@ const Blogs = () => {
         class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
       >
         <div class="collapse-title text-xl font-medium">
-          Focus me to see content
+          How does prototypical inheritance work?
         </div>
         <div class="collapse-content">
-          <p>tabindex="0" attribute is necessary to make the div focusable</p>
+          <p>
+            The Prototypal Inheritance is a feature in javascript used to add
+            methods and properties in objects. It is a method by which an object
+            can inherit the properties and methods of another object.
+            Traditionally, in order to get and set the [[Prototype]] of an
+            object, we use Object. getPrototypeOf and Object.
+          </p>
         </div>
       </div>
       <div
@@ -52,10 +70,37 @@ const Blogs = () => {
         class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
       >
         <div class="collapse-title text-xl font-medium">
-          Focus me to see content
+          you have an array of products. Each product has a name, price,
+          description, etc. How will you implement a search to find products by
+          name?
         </div>
         <div class="collapse-content">
-          <p>tabindex="0" attribute is necessary to make the div focusable</p>
+          <p>
+            First of all I need to fetch the data from server or json file.
+            After fetching the data I should map them. If I map a thing, it will
+            give me all the data. So I can easily get them at my own. For making
+            it a little easier we can destructure them. Beside that, we can use
+            axios. Nonetheless If I need to reuse it, I can make a custom hook
+            to make it reusable for me. So, basically this is how it works
+            actually from my point of view and learning throughout the time.
+          </p>
+        </div>
+      </div>
+      <div
+        tabindex="0"
+        class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
+      >
+        <div class="collapse-title text-xl font-medium">
+          What is a unit test? Why should write unit tests?
+        </div>
+        <div class="collapse-content">
+          <p>
+            The main objective of unit testing is to isolate written code to
+            test and determine if it works as intended. Unit testing is an
+            important step in the development process, because if done
+            correctly, it can help detect early flaws in code which may be more
+            difficult to find in later testing stages.
+          </p>
         </div>
       </div>
     </div>
