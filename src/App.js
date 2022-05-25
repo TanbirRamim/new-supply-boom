@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import Blogs from "./Pages/Blogs";
 import Dashboard from "./Pages/Dashboard";
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer></Footer>
       </Navbar>
     </div>
   );

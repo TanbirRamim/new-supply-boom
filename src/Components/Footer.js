@@ -2,13 +2,13 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer class="footer p-10 bg-base-300 text-base-content">
+    <footer class="footer p-10 bg-primary text-base-content">
       <div>
         <span class="footer-title">Services</span>
-        <a class="link link-hover">Branding</a>
+        <a class="link link-hover">Quick Supply</a>
         <a class="link link-hover">Design</a>
-        <a class="link link-hover">Marketing</a>
-        <a class="link link-hover">Advertisement</a>
+        <a class="link link-hover">Manufacture</a>
+        <a class="link link-hover">Invent</a>
       </div>
       <div>
         <span class="footer-title">Company</span>
