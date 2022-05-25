@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = ({ children }) => {
   return (
@@ -7,9 +7,7 @@ const Navbar = ({ children }) => {
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col">
         <div class="w-full navbar bg-primary fixed top-0 z-50 lg:px-15">
-          <div as={Link} to="/" class="flex-1 px-2 mx-2 text-2xl  ">
-            Supply Boom
-          </div>
+          <div class="flex-1 px-2 mx-2 text-2xl  ">Supply Boom</div>
 
           <div class="flex-none lg:hidden">
             <label for="my-drawer-3" class="btn btn-square btn-ghost">
@@ -30,20 +28,30 @@ const Navbar = ({ children }) => {
           </div>
           <div class="flex-none hidden lg:block">
             <ul class="menu menu-horizontal gap-x-2">
-              <li className="rounded-lg">
-                <NavLink to="/">Home</NavLink>
+              <li>
+                <NavLink className="rounded-lg" to="/">
+                  Home
+                </NavLink>
               </li>
-              <li className="rounded-lg">
-                <NavLink to="/dashboard">Dashboard</NavLink>
+              <li>
+                <NavLink className="rounded-lg" to="/dashboard">
+                  Dashboard
+                </NavLink>
               </li>
-              <li className="rounded-lg">
-                <NavLink to="/blogs">Blogs</NavLink>
+              <li>
+                <NavLink className="rounded-lg" to="/blogs">
+                  Blogs
+                </NavLink>
               </li>
-              <li className="rounded-lg">
-                <NavLink to="/myPortfolio">My Portfolio</NavLink>
+              <li>
+                <NavLink className="rounded-lg" to="/myPortfolio">
+                  My Portfolio
+                </NavLink>
               </li>
-              <li className="rounded-lg">
-                <NavLink to="/login">Login</NavLink>
+              <li>
+                <NavLink className="rounded-lg" to="/login">
+                  Login
+                </NavLink>
               </li>
             </ul>
           </div>
