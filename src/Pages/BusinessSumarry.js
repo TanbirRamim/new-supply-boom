@@ -6,42 +6,39 @@ import { FaUsers } from "react-icons/fa";
 import { AiOutlinePlus } from "react-icons/ai";
 const BusinessSumarry = () => {
   return (
-    <div className="container">
+    <div className="mt-2 ">
       <hr />
-      <div className="d-flex align-items-center justify-evenly ">
-        <div className="fs-1 ">
-          <FcBusinessman className="mx-auto"></FcBusinessman>
+      <div className="flex items-evenly justify-evenly ">
+        <div className=" ">
+          <FcBusinessman className="mx-auto text-6xl"></FcBusinessman>
           <small>
-            <i>SUPPLIER</i>
+            <i className="text-2xl">COUNTRIES</i>
           </small>
           <br />
-          <div className="d-flex align-items-center">
-            {" "}
-            <CountUp className="mx-auto " end={100} duration={5}></CountUp>
+          <div className="flex items-center">
+            <CountUp className="mx-auto " end={40} duration={6}></CountUp>
             <AiOutlinePlus></AiOutlinePlus>
           </div>
         </div>
-        <div className="fs-1">
-          <MdProductionQuantityLimits className="mx-auto"></MdProductionQuantityLimits>
+        <div className="">
+          <MdProductionQuantityLimits className="mx-auto text-6xl"></MdProductionQuantityLimits>
           <small>
-            <i>Items</i>
+            <i className="text-2xl">Items</i>
           </small>
           <br />
-          <div className="d-flex align-items-center">
-            {" "}
+          <div className="flex items-center">
             <CountUp className="mx-auto" end={6100} duration={6}></CountUp>
             <AiOutlinePlus></AiOutlinePlus>
           </div>
         </div>
-        <div className="fs-1">
-          <FaUsers className="mx-auto"></FaUsers>
+        <div className="">
+          <FaUsers className="mx-auto text-6xl"></FaUsers>
           <small>
-            <i>USERS</i>
+            <i className=" text-2xl">CUSTOMERS</i>
           </small>
           <br />
-          <div className="d-flex align-items-center">
-            {" "}
-            <CountUp className="mx-auto" end={2000} duration={4}></CountUp>
+          <div className="flex justify-center items-center">
+            <CountUp className="mx-auto" end={20000} duration={6}></CountUp>
             <AiOutlinePlus></AiOutlinePlus>
           </div>
         </div>
