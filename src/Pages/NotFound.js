@@ -1,9 +1,9 @@
 import React from "react";
-
+import snap from "../Images/snap.jpg";
 const NotFound = () => {
   return (
-    <div className="mt-16 ">
-      <h1> Welcome to khao, you have been pranked</h1>
+    <div className=" mt-18 self-center flex items-center content-center h-screen  ">
+      <img className="" src={snap} alt="" />
     </div>
   );
 };
