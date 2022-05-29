@@ -23,13 +23,15 @@ const OrderModal = ({ order, setOrder }) => {
       orderQuantity: event.target.quantity.value,
       address: event.target.address.value,
     };
-    axios.post("http://localhost:5000/orders", ordering).then((response) => {
-      const { data } = response;
-      if (data.insertedId) {
-        toast("Your order is Confirmed");
-        event.target.reset();
-      }
-    });
+    axios
+      .post("https://pacific-gorge-12132.herokuapp.com/orders", ordering)
+      .then((response) => {
+        const { data } = response;
+        if (data.insertedId) {
+          toast("Your order is Confirmed");
+          event.target.reset();
+        }
+      });
   };
   return (
     <div>

@@ -1,7 +1,7 @@
-# Project Name: Wholesome Tech <br></br>
-[Live Site]()
+# Project Name: Supply Boom <br></br>
+[Live Site](https://supply-boom.web.app/)
 
-## Description: Wholesome Tech is a warehouse management company where you will find items at a glance and the quantity is bigger than your personality :v 
+## Description: Supply Boom is a manufacturer  company where you will find items at a glance and the quantity is bigger than your personality :v 
  
  <li>A decent navbar and footer</li>
  <li>Provided all types of services </li>

@@ -13,7 +13,7 @@ const Purchase = () => {
   let quantity = parseInt(available_quantity);
   let minOrder = parseInt(min_order);
   useEffect(() => {
-    const url = `http://localhost:5000/tool/${toolId}`;
+    const url = `https://pacific-gorge-12132.herokuapp.com/tool/${toolId}`;
     console.log(url);
     fetch(url)
       .then((res) => res.json())
