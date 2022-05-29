@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import {
   useSignInWithGoogle,
-  useSignInWithGithub,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { SiGithub } from "react-icons/si";
+
 import auth from "../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "./Loading";
@@ -20,8 +19,6 @@ const Login = () => {
     handleSubmit,
   } = useForm();
 
-  const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
-
   const [signInWithEmailAndPassword, Euser, Eloading, Eerror] =
     useSignInWithEmailAndPassword(auth);
 
@@ -31,19 +28,19 @@ const Login = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
   useEffect(() => {
-    if (user || user1 || Euser) {
+    if (user || Euser) {
       navigate(from, { replace: true });
     }
-  }, [user, user1, Euser, from, navigate]);
+  }, [user, Euser, from, navigate]);
 
-  if (loading || loading1 || Eloading) {
+  if (loading || Eloading) {
     return <Loading></Loading>;
   }
 
-  if (error || error1 || Eerror) {
+  if (error || Eerror) {
     errorElement = (
       <p className="text-red-500">
-        <small>{error?.message || error1?.message || Eerror?.message}</small>
+        <small>{error?.message || Eerror?.message}</small>
       </p>
     );
   }
@@ -135,12 +132,6 @@ const Login = () => {
             className="btn btn-outline"
           >
             <FcGoogle className="text-2xl"> </FcGoogle> google
-          </button>
-          <button
-            onClick={() => signInWithGithub()}
-            className="btn btn-outline"
-          >
-            <SiGithub className="text-2xl"> </SiGithub> Github
           </button>
         </div>
       </div>

@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Zotac Graphics Card",
+        "min_order": "30",
+        "available_quantity": "950",
+        "price": "350",
+        "img": "https://www.pny.com/productimages/C427E702-2D29-42D3-ABB5-AD16008DB09B/images/T600_3QTR-Left.png",
+        "short_description": "Best ever graphics card you will ever have in your whole life beta "
+    },
+    {
+        "id": 2,
+        "name": "Nvidia Graphics Card",
+        "min_order": "20",
+        "available_quantity": "1200",
+        "price": "1229.00",
+        "img": "https://www.tradeinn.com/f/13838/138389295/hp-nvidia-quadro-t1000-4gb-gddr6-graphic-card.jpg",
+        "short_description": "At nvidia Tools we pride ourselves on offering you the best selection of tools,"
+    },
+    {
+        "id": 3,
+        "name": "Titan Graphics Card",
+        "min_order": "20",
+        "available_quantity": "1200",
+        "price": "129.00",
+        "img": "https://cdn.mos.cms.futurecdn.net/WqPGPsqeAgrGFgbPRTMP46.jpg",
+        "short_description": "From time to time we are not always able to see what the competition is doing. Our product is priced as low as possible"
+    },
+    {
+        "id": 4,
+        "name": "Gtx Series ",
+        "min_order": "30",
+        "available_quantity": "900",
+        "price": "1103.65",
+        "img": "https://cdn.wccftech.com/wp-content/uploads/2018/07/nvidia-titan-xp-ce-star-wars-jedi-order-gallery-02-1.jpg",
+        "short_description": " Our product is priced as low as possible. However, our prices won't be beat"
+    },
+    {
+        "id": 5,
+        "name": "Rtx Series",
+        "min_order": "35",
+        "available_quantity": "1000",
+        "price": "199.00",
+        "img": "https://techpc7.in/wp-content/uploads/2022/01/PNY-Nvidia-Quadro-T400-2GB-GDDR6-Graphics-Card-1.jpg",
+        "short_description": "If you see the exact item currently advertised for less we should be able to match that price"
+    },
+    {
+        "id": 6,
+        "name": "RXT Series",
+        "min_order": "15",
+        "available_quantity": "800",
+        "price": "599.00",
+        "img": "https://m.media-amazon.com/images/I/61Ugp6grBFL._SL1024_.jpg",
+        "short_description": "The best is yet to come! Visual 4K "
+    }
+]
