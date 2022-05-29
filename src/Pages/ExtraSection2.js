@@ -3,10 +3,10 @@ import { MdSearch } from "react-icons/md";
 import { BiLike } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
 import { BiRefresh } from "react-icons/bi";
-// grid lg:grid-cols-3 md:grid-cols-1 gap-4
+
 const ExtraSection2 = () => {
   return (
-    <div className="m-5 text-center">
+    <div className="m-10 text-center">
       <div className="my-5 text-center">
         <h1 className="text-2xl">
           The smartest choice for{" "}
@@ -18,7 +18,7 @@ const ExtraSection2 = () => {
         </p>
       </div>
       <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
-        <div>
+        <div className="flex flex-col items-center">
           <AiFillStar className="text-4xl text-blue-400"></AiFillStar>
           <h1 className="text-2xl">High-quality stock</h1>
           <p>
@@ -26,32 +26,25 @@ const ExtraSection2 = () => {
             projects look professional.
           </p>
         </div>
-        <div>
-          <h1 className="text-2xl">
-            <BiLike className="text-4xl text-blue-400"></BiLike> Ready-to-use
-            assets
-          </h1>
+        <div className="flex flex-col items-center">
+          <BiLike className="text-4xl text-blue-400"></BiLike>
+          <h1 className="text-2xl">Ready-to-use assets</h1>
           <p>
             Access thousands of tools and designs ready-to-use and get your
             project ready double quick.
           </p>
         </div>
-        <div>
-          <h1 className="text-2xl">
-            {" "}
-            <MdSearch className="text-center text-4xl text-blue-400"></MdSearch>{" "}
-            Guaranteed search results
-          </h1>
+        <div className="flex flex-col items-center">
+          <MdSearch className="text-center text-4xl text-blue-400"></MdSearch>{" "}
+          <h1 className="text-2xl"> Guaranteed search results</h1>
           <p>
             There’s an image and style for every project, whatever your needs
             are.
           </p>
         </div>
-        <div>
-          <h1 className="text-2xl">
-            <BiRefresh className="text-center text-4xl text-blue-400"></BiRefresh>{" "}
-            Fresh content everyday
-          </h1>
+        <div className="flex flex-col items-center">
+          <BiRefresh className="text-center text-4xl text-blue-400"></BiRefresh>{" "}
+          <h1 className="text-2xl">Fresh content everyday</h1>
           <p>
             Our Company is updated on a daily basis so you can find the newest
             and trendiest tools and designs.

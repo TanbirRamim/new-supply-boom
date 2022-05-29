@@ -9,12 +9,9 @@ const Tool = ({ tool }) => {
   };
   return (
     <div>
-      <div className=" h-full  shadow-lg p-3 mb-5 bg-primary rounded mx-auto ">
-        <img
-          className="w-1/2 mx-auto transition ease-in-out delay-300 hover:-translate-y-1 hover:scale-125 "
-          src={tool.img}
-          alt=""
-        />
+      <div className=" card w-96 bg-base-100 shadow-xl ">
+        <img className="w-1/2 mx-auto  " src={tool.img} alt="" />
+        {/* transition ease-in-out delay-300 hover:-translate-y-1 hover:scale-125 */}
         <h4 className="text-xl font-medium text-center my-3">
           <i>{tool.name}</i>
         </h4>

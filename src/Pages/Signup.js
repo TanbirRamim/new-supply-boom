@@ -1,177 +1,107 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   useCreateUserWithEmailAndPassword,
-  useSignInWithGoogle,
-  useSignInWithGithub,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import auth from "../firebase.init";
-import { useForm } from "react-hook-form";
-import Loading from "./Loading";
 import { Link, useNavigate } from "react-router-dom";
+import auth from "../firebase.init";
+import Loading from "./Loading";
+import SocialLogin from "./SocialLogin";
 
 const SignUp = () => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
-  const [createUserWithEmailAndPassword, Euser, Eloading, Eerror] =
-    useCreateUserWithEmailAndPassword(auth);
-
-  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
+  const [agree, setAgree] = useState(false);
+  const [createUserWithEmailAndPassword, user, loading] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating] = useUpdateProfile(auth);
   const navigate = useNavigate();
-
-  let signInError;
-
-  if (loading || loading1 || Eloading || updating) {
+  const navigateLogin = () => {
+    navigate("/login");
+  };
+  if (loading || updating) {
     return <Loading></Loading>;
   }
-
-  if (error || error1 || Eerror || updateError) {
-    signInError = (
-      <p className="text-red-500">
-        <small>
-          {error?.message ||
-            error1?.message ||
-            Eerror?.message ||
-            updateError?.message}
-        </small>
-      </p>
-    );
+  if (user) {
+    navigate("/home");
   }
 
-  if (user || user1 || Euser) {
-    console.log(user || user1 || Euser);
-  }
+  const handleRegister = async (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
 
-  const onSubmit = async (data) => {
-    await createUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({ displayName: data.name });
-    console.log("updated");
-    navigate("/");
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
+    console.log("Updated profile");
+    navigate("/home");
   };
   return (
-    <div className="flex h-screen justify-center items-center">
-      <div className="card w-96 bg-base-100 shadow-xl">
-        <div className="card-body">
-          <h2 className="text-center text-2xl font-bold">Sign Up</h2>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Name</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="input input-bordered w-full max-w-xs"
-                {...register("name", {
-                  required: {
-                    value: true,
-                    message: "Name is Required",
-                  },
-                })}
-              />
-              <label className="label">
-                {errors.name?.type === "required" && (
-                  <span className="label-text-alt text-red-500">
-                    {errors.name.message}
-                  </span>
-                )}
-              </label>
-            </div>
-
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="input input-bordered w-full max-w-xs"
-                {...register("email", {
-                  required: {
-                    value: true,
-                    message: "Email is Required",
-                  },
-                  pattern: {
-                    value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                    message: "Provide a valid Email",
-                  },
-                })}
-              />
-              <label className="label">
-                {errors.email?.type === "required" && (
-                  <span className="label-text-alt text-red-500">
-                    {errors.email.message}
-                  </span>
-                )}
-                {errors.email?.type === "pattern" && (
-                  <span className="label-text-alt text-red-500">
-                    {errors.email.message}
-                  </span>
-                )}
-              </label>
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <input
-                type="password"
-                placeholder="Password"
-                className="input input-bordered w-full max-w-xs"
-                {...register("password", {
-                  required: {
-                    value: true,
-                    message: "Password is Required",
-                  },
-                  minLength: {
-                    value: 6,
-                    message: "Must be 6 characters or longer",
-                  },
-                })}
-              />
-              <label className="label">
-                {errors.password?.type === "required" && (
-                  <span className="label-text-alt text-red-500">
-                    {errors.password.message}
-                  </span>
-                )}
-                {errors.password?.type === "minLength" && (
-                  <span className="label-text-alt text-red-500">
-                    {errors.password.message}
-                  </span>
-                )}
-              </label>
-            </div>
-
-            {signInError}
-            <input
-              className="btn w-full max-w-xs text-white"
-              type="submit"
-              value="Sign Up"
-            />
-          </form>
-          <p>
-            <small>
-              Already have an account?{" "}
-              <Link className="text-primary" to="/login">
-                Please login
-              </Link>
-            </small>
-          </p>
-          <div className="divider">OR</div>
+    <div>
+      <div className="register-form mt-3 container w-50 mx-auto shadow-lg p-3 my-5 bg-body rounded ">
+        <div className="d-flex justify-content-between">
           <button
-            onClick={() => signInWithGoogle()}
-            className="btn btn-outline"
+            className="mx-auto border-end w-50 text-success"
+            onClick={navigateLogin}
           >
-            Continue with Google
+            LOGIN
+          </button>
+          <button className="mx-auto border-start w-50 text-success">
+            REGISTER
           </button>
         </div>
+        <SocialLogin></SocialLogin>
+        <form
+          className="d-flex flex-column justify-content-center"
+          onSubmit={handleRegister}
+        >
+          <input type="text" name="name" id="" placeholder="Your Name" />
+
+          <input
+            type="email"
+            name="email"
+            id=""
+            placeholder="Email Address"
+            required
+          />
+
+          <input
+            type="password"
+            name="password"
+            id=""
+            placeholder="Password"
+            required
+          />
+          <div>
+            <input
+              onClick={() => setAgree(!agree)}
+              type="checkbox"
+              name="terms"
+              id="terms"
+            />
+            <label
+              className={`ps-2 ${agree ? "" : "text-danger"}`}
+              htmlFor="terms"
+            >
+              Accept Get Cracking Gears Terms
+            </label>
+          </div>
+          <button
+            disabled={!agree}
+            className="btn-success w-50 mx-auto py-2 my-2 rounded"
+          >
+            REGISTER
+          </button>
+        </form>
+        <p>
+          Already have an account?{" "}
+          <Link
+            to="/login"
+            className="text-success pe-auto text-decoration-none fw-bold italic"
+            onClick={navigateLogin}
+          >
+            Please Login
+          </Link>{" "}
+        </p>
       </div>
     </div>
   );
