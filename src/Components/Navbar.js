@@ -41,11 +41,11 @@ const Navbar = ({ children }) => {
                   Home
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink className="rounded-lg" to="/dashboard">
                   Dashboard
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink className="rounded-lg" to="/blogs">
                   Blogs
@@ -59,8 +59,6 @@ const Navbar = ({ children }) => {
               {user && (
                 <>
                   <NavLink to="/dashboard">Dashboard</NavLink>
-                  <NavLink to="/addreview">Add review</NavLink>
-                  <NavLink to="/myorders">My Orders</NavLink>
                 </>
               )}
               {user ? (

@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import AddReview from "./Pages/AddReview";
 import Blogs from "./Pages/Blogs";
-import Dashboard from "./Pages/Dashboard";
+import DashBoard from "./Pages/DashBoard";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import MyOrders from "./Pages/MyOrders";
@@ -21,13 +22,17 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route
-            path="/dashboard"
+            path="dashboard"
             element={
               <RequireAuth>
-                <Dashboard />
+                <DashBoard />
               </RequireAuth>
             }
-          />
+          >
+            <Route index element={<MyOrders></MyOrders>}></Route>
+            <Route path="addReview" element={<AddReview></AddReview>}></Route>
+          </Route>
+          <Route path="dashboard" element={<MyOrders></MyOrders>}></Route>
           <Route path="/myPortfolio" element={<MyPortfolio />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route
@@ -39,27 +44,13 @@ function App() {
             }
           ></Route>
           <Route path="/login" element={<Login />} />
-          <Route
-            path="/myorders"
-            element={
-              <RequireAuth>
-                <MyOrders />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/addreview"
-            element={
-              <RequireAuth>
-                <AddReview />
-              </RequireAuth>
-            }
-          />
+
           <Route path="/signup" element={<SignUp />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer></Footer>
       </Navbar>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
